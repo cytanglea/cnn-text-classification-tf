@@ -45,6 +45,8 @@ print("")
 # Data Preparation
 # ==================================================
 
+print("started!")
+
 # Load data
 print("Loading data...")
 x_text, y = data_helpers.load_data_and_labels(FLAGS.positive_data_file, FLAGS.negative_data_file)
@@ -186,5 +188,5 @@ with tf.Graph().as_default():
             if current_step % FLAGS.checkpoint_every == 0:
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                 print("Saved model checkpoint to {}\n".format(path))
-	    if current_step == 200:
-	        break
+            if current_step == 400:
+                break
